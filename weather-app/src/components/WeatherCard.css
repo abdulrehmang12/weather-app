@@ -1,0 +1,119 @@
+.weather-card {
+  background: #1e3c72;  /* Solid dark blue */
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Different solid colors for different weather conditions */
+.weather-card.clear {
+  background: #f39c12;  /* Orange for sunny */
+}
+
+.weather-card.clouds {
+  background: #34495e;  /* Dark gray-blue for cloudy */
+}
+
+.weather-card.rain {
+  background: #2980b9;  /* Blue for rain */
+}
+
+.weather-card.thunderstorm {
+  background: #2c3e50;  /* Dark slate for storms */
+}
+
+.weather-card.snow {
+  background: #3498db;  /* Light blue for snow */
+}
+
+.weather-card.mist {
+  background: #7f8c8d;  /* Gray for mist/fog */
+}
+
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.weather-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.temperature {
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0;
+  color: white;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.8rem;
+  border-radius: 50px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  color: #ecf0f1;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.last-updated {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #ecf0f1;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
