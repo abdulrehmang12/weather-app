@@ -1,0 +1,18 @@
+{
+  "name": "weather-app-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "node server.js",
+    "client": "cd weather-app && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install:all": "npm install && cd weather-app && npm install"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
