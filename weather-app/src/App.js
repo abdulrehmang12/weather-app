@@ -11,8 +11,7 @@ function App() {
   const [error, setError] = useState(null);
   const [unit, setUnit] = useState('metric');
 
-  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-  const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
   const fetchWeather = async (city) => {
     setLoading(true);
@@ -27,27 +26,19 @@ function App() {
         return;
       }
 
-      console.log('Fetching weather for:', city);
-      console.log('API Key:', API_KEY);
-      
-      const response = await axios.get(BASE_URL, {
+      const response = await axios.get(`${BACKEND_URL}/api/weather`, {
         params: {
-          q: city,
+          city,
           units: unit,
-          appid: API_KEY
         }
       });
 
-      console.log('Response data:', response.data);
-      
       // Cache the response
       setCachedWeather(city, unit, response.data);
       
       setWeatherData(response.data);
     } catch (err) {
-      console.error('Full error:', err);
       if (err.response) {
-        console.error('Error response:', err.response.data);
         if (err.response.status === 404) {
           setError('City not found. Please try again.');
         } else if (err.response.status === 401) {
